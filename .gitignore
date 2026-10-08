@@ -1,0 +1,13 @@
+node_modules/
+
+# environment files (keep the example tracked)
+.env
+.env.*
+!.env.example
+
+# logs (keep the directory placeholder tracked)
+logs/*
+!logs/.gitkeep
+*.log
+*.log.*
+npm-debug.log*

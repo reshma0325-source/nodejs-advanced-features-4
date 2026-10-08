@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: nodejs-advanced-features-4
+    runtime: node
+    plan: free
+    buildCommand: npm install --production
+    startCommand: node server.js
+    healthCheckPath: /health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: LOG_LEVEL
+        value: info
+      - key: LOG_DIR
+        value: logs

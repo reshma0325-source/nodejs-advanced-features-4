@@ -1,0 +1,54 @@
+Case Study 4: Logging with Morgan and Winston + Deployment Plan
+🎯 Objective:
+Log API activity using morgan (for HTTP) and winston (for custom logs).
+
+📦 Packages:
+npm install morgan winston
+📁 Logging Setup (middleware/logger.js)
+const winston = require('winston');
+
+const logger = winston.createLogger({
+  transports: [
+    new winston.transports.File({ filename: 'logs/app.log' })
+  ]
+});
+
+module.exports = logger;
+📁 Morgan Integration:
+const morgan = require('morgan');
+const fs = require('fs');
+const path = require('path');
+
+app.use(morgan('combined', {
+  stream: fs.createWriteStream(path.join(__dirname, 'logs/access.log'), { flags: 'a' })
+}));
+📦 Deployment Overview:
+Platform
+
+Config Needs
+
+Notes
+
+🟪 Heroku
+
+Procfile, PORT, dotenv
+
+Great for quick deploy
+
+🟦 Vercel
+
+Only frontend supported
+
+Use APIs via Vercel Functions
+
+☁️ Render
+
+Easy for Node.js apps
+
+Supports DB connections
+
+🔐 VPS
+
+Manual setup + Nginx
+
+Max flexibility
