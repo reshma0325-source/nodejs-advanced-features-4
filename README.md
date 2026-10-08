@@ -82,6 +82,7 @@ Copy `.env.example` to `.env` for local development. On Render these are set by
 
 | Method | Route               | Description                                    |
 | ------ | ------------------- | ---------------------------------------------- |
+| GET    | `/`                 | API index: service info and endpoint list      |
 | GET    | `/health`           | Liveness probe, returns `{ status: 'ok' }`     |
 | GET    | `/api/products`     | List the 6 in-memory products                  |
 | GET    | `/api/products/:id` | Fetch one product by id (404 if missing)       |

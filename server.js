@@ -23,6 +23,23 @@ app.get('/health', (req, res) => {
   });
 });
 
+app.get('/', (req, res) => {
+  res.json({
+    name: 'nodejs-advanced-features-4',
+    description: 'Express 5 logging API with morgan and winston',
+    status: 'ok',
+    endpoints: {
+      health: 'GET /health',
+      listProducts: 'GET /api/products',
+      getProduct: 'GET /api/products/:id',
+      createProduct: 'POST /api/products',
+      logDemo: 'GET /api/logs/demo',
+      logSummary: 'GET /api/logs/summary',
+    },
+    docs: 'https://github.com/reshma0325-source/nodejs-advanced-features-4#readme',
+  });
+});
+
 app.use('/api', productRoutes);
 
 app.use(notFound);
